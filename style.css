@@ -229,12 +229,12 @@ h1 {
 	text-transform: uppercase;
 }
 .btn-alt {
-	border: 1px solid #5ea4eb;
+	border: 1px solid #fff;
 	padding: 10px 30px;
 }
 .btn-alt:hover {
 	background: #fff;
-	color: #a8aca3;
+	color: #648880;
 }
 /*
   ========================================
@@ -312,13 +312,20 @@ h1 {
   Speakers
   ========================================
 */
+.speaker {
+	margin-bottom: 44px;
+  }
 .speaker-info {
-	border: 1px solid #dfe2e5;
+	border: 1px solid #052d4d;
 	border-radius: 5px;
 	margin-top: 88px;
 	padding: 22px 0;
 	text-align: center;
   } 
-  .speaker {
-	margin-bottom: 44px;
+  .speaker-info img {
+	border-radius: 50%;
+	height: 130px;
+	margin: -66px 0 22px 0;
+	vertical-align: top;
   }
+  
