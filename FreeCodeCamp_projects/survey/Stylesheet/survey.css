@@ -1,0 +1,51 @@
+body {
+      background: #567123;
+    }
+#outside {
+      display: box;
+      margin-left: auto;
+      margin-right: auto;
+      background: #01011c;
+      color: #e8fa98;
+    }
+ #title, 
+ #description {
+      text-align: center;
+      color: #fabbb6;
+    }
+#title {
+      text-transform: capitalize;
+    }
+#personal-details {
+      background: #023b3b;
+    }
+label{
+        display: inline-block;
+        width: 250px;
+        text-align: right;
+    }
+input {
+      display: inline-block;
+    }
+#gender {
+      display: inline;
+      text-align: center;
+    }
+legend {
+      color: #bcf2a7
+    }
+#social-media {
+      background: #1b0124
+    }
+#submit-button {
+      margin: auto;
+      padding: 5px;
+      width: 30px;
+    }
+#submit {
+      margin: 10px;
+      font-size: 20px
+    }
+#submit:hover {
+      background-color: #b5aa09;
+    }
