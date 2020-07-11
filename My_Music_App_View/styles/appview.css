@@ -1,0 +1,132 @@
+* {
+	box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;   
+  background: linear-gradient(rgba(123, 35, 166, 0.6), rgba(210, 100, 230, 0.8));
+  margin: 0;    
+  font-family: Lato, sans-serif;
+  color: #222;    
+  font-size: 0.9em;
+}
+main {
+  flex: 1 0 auto;
+  display: flex;
+}
+aside {
+	flex: 0 0 40px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	background-color: #789341;
+}
+aside i.fa {
+	font-size: 0.9em;
+}
+.content {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+}
+.music-head {  
+  flex: 0 0 280px;
+  display: flex;   
+  padding: 40px;  
+  background-color: #0a1a36;
+}
+.album-art {
+  width: 35%;
+}
+.music-list {    
+  flex: 1 0 auto;    
+  list-style-type: none;    
+  padding: 5px 10px 0px; 
+  background: linear-gradient(rgba(255, 35, 66, 0.6), rgba(20, 100, 230, 0.8));
+}
+li { 
+  display: flex;   
+  padding: 0 20px;  
+  min-height: 50px;
+  border-bottom: 1px solid #000;
+  
+}
+.like {
+  font-size: 150%;
+  color:red;
+}
+li p {  flex: 0 0 16.66%; 
+}
+li span.cloud {  
+  border: 1px solid black;  
+  font-size: 0.6em; 
+  padding: 3px;
+}
+li:nth-child(2n) {  
+  background-color: #7de058;
+}
+.my-music {  
+  flex: 1 1 auto;  
+  display: flex;  
+  flex-direction: column;  
+  font-weight: 300;  
+  color: #fff; 
+  padding-left: 50px;
+}
+.my-music div:nth-child(1) {  
+  margin-bottom: auto;
+}
+.my-music div:nth-child(2) {  
+  margin-top: 0;
+}
+.my-music div:nth-child(2) 
+i.fa {  
+  font-size: 0.9em; 
+  padding: 0 0.7em;  
+  font-weight: 300;
+}
+.my-music div:nth-child(1)
+p:first-child {  
+  font-size: 1.8em; 
+  margin: 0 0 10px;
+}
+.my-music div:nth-child(1) 
+p:not(:first-child) {  
+  font-size: 0.9em;  
+  margin: 2px 0;
+}
+footer {
+  flex: 0 0 90px;
+  padding: 10px;    
+  color: #fff;    
+  background-color: rgba(31, 240, 210, .9);
+}
+.now-playing {
+	display: flex;
+	margin-right: auto;
+    width: 60%;
+}
+
+.now-playing img{
+	padding-right: 10px;
+	width: 100px;
+}
+
+.music-controls {
+	display: flex;  
+	align-items: center;
+	justify-content: space-between;
+	width: 40%;
+    position: relative;
+    left: 280px;
+    bottom: 40px;
+  
+  
+}
+
