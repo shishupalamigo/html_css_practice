@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Documentation: Opening The Box Model</title>
+    <link rel="stylesheet" href="assets/stylesheet/style.css">
+</head>
+<body>
+
+    <!-----Side Nav-Bar------->
+
+    <nav id="navbar">
+        <header>Opening The Box Model</header>
+        <ul>
+            <li> <a class="nav-link" href="#Introduction">Introduction</a></li>
+            <li><a class="nav-link" href="#How_Are_Elements_Displayed">How Are Elements Displayed</a></li>
+             <li><a class="nav-link" href="#What_Is_the_Box_Model">What Is the Box Model</a></li>
+             <li><a class="nav-link" href="#Working_With_the_Box_Model">Working With the Box Model</a></li>
+             <li><a class="nav-link" href="#Box_Sizing">Box Sizing</a></li>
+             <li><a class="nav-link" href="#Developer_Tools">Developer Tools</a></li>
+             <li><a href="#Summary">Summary</a></li>
+             <li><a class="nav-link" href="#References">References</a></li>
+        </ul>
+    </nav>
+
+    <!---Main---->
+
+    <main id="main-doc">
+     <section class="main-section" id="Introduction">
+        <header>Introduction</header>
+        <article>
+            <p>CSS describes how each element and each string of text in a source document is laid out by transforming the document tree into a set of <b>boxes</b>, whose size, position, and stacking level on the canvas depend on the values of their CSS properties. </p>
+             <p>Each CSS box has a rectangular content area, a band of padding around the content, a border around the padding, and a margin outside the border. The sizing properties, together with various other properties that control layout, define the size of the content area. The box styling properties—padding and its longhands, border and its longhands, and margin and its longhands—define the sizes of these other areas. Margins and padding are defined in this module; borders are also defined. </p> 
+        </article>
+     </section>
+
+     <!--How Are Elements Displayed-->
+
+     <section class="main-section" id="How_Are_Elements_Displayed">
+       <header>How Are Elements Displayed</header>
+       <article>
+           <p>Before jumping into the box model, it helps to understand how elements are displayed. I assume that you have already  covered the difference between block-level and inline-level elements. Here is a quick recap, Block-level elements occupy any available width, regardless of their content, and begin on a new line. Inline-level elements occupy only the width their content requires and line up on the same line, one after the other. Block-level elements are generally used for larger pieces of content, such as headings and structural elements. Inline-level elements are generally used for smaller pieces of content, such as a few words selected to be bold or italicized.</p>
+           <h3>Display</h3>
+           <p>Exactly how elements are displayed—as block-level elements, inline elements, or something else—is determined by the display property. Every element has a default display property value; however, as with all other property values, that value may be overwritten. There are quite a few values for the display property, but the most common are block, inline, inline-block, and none.</p>
+
+            <p>We can change an element’s display property value by selecting that element within CSS and declaring a new display property value. A value of block will make that element a block-level element.</p>
+            <code>
+                p {
+                display: block;
+              }
+            </code>
+            <p>A value of inline will make that element an inline-level element.</p>
+            <code>
+                p { 
+                display: inline;
+              }
+            </code>
+            <p>Things get interesting with the inline-block value. Using this value will allow an element to behave as a block-level element, accepting all box model properties (which we’ll cover soon). However, the element will be displayed in line with other elements, and it will not begin on a new line by default.</p>
+            <code>
+                p {
+                    display: inline-block;
+                  }
+            </code>
+            <p>Lastly, using a value of none will completely hide an element and render the page as if that element doesn’t exist. Any elements nested within this element will also be hidden.</p>
+            <code>
+                div {
+                    display: none;
+                  }
+            </code>
+            <p>Knowing how elements are displayed and how to change their display is fairly important, as the display of an element has implications on how the box model is rendered. As we discuss the box model, we’ll be sure to look at these different implications and how they can affect the presentation of an element.</p>
+       </article>
+     </section>
+
+     <!--What Is the Box Model-->
+
+     <section class="main-section" id="What_Is_the_Box_Model">
+         <header>What Is the Box Model</header>
+         <article>
+             <p>According to the box model concept, every element on a page is a rectangular box and may have width, height, padding, borders, and margins.</p>
+             <p>That’s worth repeating: <strong> element on a page is a rectangular box.</strong></p>
+             <figure>
+             <img src="" alt="rectangular box">
+             <figcaption>
+                Fig 1: When we look at each element individually, we can see how they are all rectangular, regardless of their presented shapes</figcaption>
+                </figure>
+                <p>Every element on every page conforms to the box model, so it’s incredibly important. Let’s take a look at it, along with a few new CSS properties, to better understand what we are working with.</p>
+         </article>
+     </section>
+     
+     <!--Working With the Box Model-->
+
+     <section class="main-section" id="Working_With_the_Box_Model">
+        <header>Working With the Box Model</header>
+        <article>
+            <p>Every element is a rectangular box, and there are several properties that determine the size of that box. The core of the box is defined by the width and height of an element, which may be determined by the <i>display</i> property, by the contents of the element, or by specified <i>width</i> and <i>height</i> properties. <i>padding</i> and then <i>border</i> expand the dimensions of the box outward from the element’s width and height. Lastly, any <i>margin</i> we have specified will follow the border.</p>
+            <p>Each part of the box model corresponds to a CSS property: <i> width, height, padding, border, and margin.</i></p>
+            <p>Let’s look these properties inside some code:</p>
+            <code>
+                div {
+                    border: 6px solid #949599;
+                    height: 100px;
+                    margin: 20px;
+                    padding: 20px;
+                    width: 400px;
+                  }
+            </code>
+            <p> According to the box model, the total width of an element can be calculated using the following formula:</p>
+            <code> margin-right + border-right + padding-right + width + padding-left + border-left + margin-left</code>
+            <p>In comparison, according to the box model, the total height of an element can be calculated using the following formula:</p>
+            <code> margin-top + border-top + padding-top + height + padding-bottom + border-bottom + margin-bottom</code>
+            <figure>
+                <img src="" alt="The Box Model">
+                <figcaption>
+                    Fig 2: The box model broken down, including a base height and width plus paddings, borders, and margins
+                    </figcaption>
+            </figure>
+            <p>Using the formulas, we can find the total height and width of our example code.</p>
+            <code>
+            <dl>
+                <dt>Width:</dt>
+                <dd> 492px = 20px + 6px + 20px + 400px + 20px + 6px + 20px</dd>
+                <dt>Height:</dt>
+                <dd>192px = 20px + 6px + 20px + 100px + 20px + 6px + 20px</dd>
+            </dl>
+            </code>
+            <p>The box model is without question one of the more confusing parts of HTML and CSS. We set a width property value of 400 pixels, but the actual width of our element is 492 pixels. By default the box model is additive; thus to determine the actual size of a box we need to take into account padding, borders, and margins for all four sides of the box. Our width not only includes the width property value, but also the size of the left and right padding, left and right borders, and left and right margins.</p>
+            <p>So far a lot of these properties might not make a whole lot of sense, and that’s all right. To clarify things, let’s take a close look at all of the properties—width, height, padding, border, and margin—that go into forming the box model.</p>
+            <h3>Width &#38; Height</h3>
+            <p>Every element has default width and height. That width and height may be <i>0</i> pixels, but browsers, by default, will render every element with size. Depending on how an element is displayed, the default width and height may be adequate. If an element is key to the layout of a page, it may require specified <i>width</i> and <i>height</i> property values. In this case, the property values for non-inline elements may be specified.</p>
+             <h4>Width</h4>
+             <p>The default width of an element depends on its display value. Block-level elements have a default width of 100%, consuming the entire horizontal space available. Inline and inline-block elements expand and contract horizontally to accommodate their content. Inline-level elements cannot have a fixed size, thus the width and height properties are only relevant to non-inline elements. To set a specific width for a non-inline element, use the width property:</p>
+             <code>
+                div {
+                    width: 400px;
+                  }
+             </code>
+             <h4>Height</h4>
+             <p>The default height of an element is determined by its content. An element will expand and contract vertically as necessary to accommodate its content. To set a specific height for a non-inline element, use the height property:</p>
+             <code>
+                div {
+                    height: 100px;
+                  }
+
+             </code>
+             <h3>Margin &#38; Padding</h3>
+             <p>Depending on the element, browsers may apply default margins and padding to an element to help with legibility and clarity. We will generally see this with text-based elements. The default margins and padding for these elements may differ from browser to browser and element to element. We can use a <a href="https://meyerweb.com/eric/tools/css/reset/" target="_blank"> CSS reset</a> to tone all of these default values down to zero. Doing so allows us to work from the ground up and to specify our own values.</p>
+             <h4>Margin</h4>
+             <p>The <i>margin</i> property allows us to set the amount of space that surrounds an element. Margins for an element fall outside of any border and are completely transparent in color. Margins can be used to help position elements in a particular place on a page or to provide breathing room, keeping all other elements a safe distance away. Here’s the <i>margin</i> property in action:</p>
+               <code>
+                div {
+                    margin: 20px;
+                  } 
+               </code>
+               <p>One oddity with the <i>margin</i> property is that vertical margins, <i>top</i> and <i>bottom</i> are not accepted by inline-level elements. These vertical margins are, however, accepted by block-level and inline-block elements.</p>      
+               <h4>Padding</h4>
+               <p>The <i>padding</i> property is very similar to the <i>margin</i> property; however, it falls inside of an element’s border, should an element have a border. The <i>padding</i> property is used to provide spacing directly within an element. Here’s the code:</p>
+               <code>
+                div {
+                    padding: 20px;
+                  }
+               </code>
+               <p>The <i>padding</i> property, unlike the <i>margin</i> property, works vertically on inline-level elements. This vertical <i>padding</i> may blend into the line above or below the given element, but it will be displayed.</p>
+                <h4>Margin &#38; Padding Declarations</h4>
+                <p> In CSS, there is more than one way to declare values for certain properties. We can use longhand, listing multiple properties and values one after the other, in which each value has its own property. Or we can use shorthand, listing multiple values with one property. Not all properties have a shorthand alternative, so we must make sure we are using the correct property and value structure.</p>
+                <p>The <i>margin</i> and <i>padding</i> properties come in both longhand and shorthand form. When using the shorthand <i>margin</i> property to set the same value for all four sides of an element, we specify one value:</p>
+                <code>
+                    div {
+                        margin: 20px;
+                      } 
+                </code>
+                <p>To set one value for the top and bottom and another value for the left and right sides of an element, specify two values: top and bottom first, then left and right. Here we are placing margins of 10 pixels on the top and bottom of a &lt;div&gt; and margins of 20 pixels on the left and right:</p>
+                <code>
+                    div {
+                        margin: 10px 20px;
+                      }
+                </code>
+                <p>To set unique values for all four sides of an element, specify those values in the order of top, right, bottom, and left, moving clockwise. Here we are placing margins of 10 pixels on the top of a &lt;div&gt;, 20 pixels on the right, 0 pixels on the bottom, and 15 pixels on the left.</p>
+                <code>
+                    div {
+                        margin: 10px 20px 0 15px;
+                      }
+                </code>
+                <p>Using the margin or padding property alone, with any number of values, is considered shorthand. With longhand, we can set the value for one side at a time using unique properties. Each property name &#40;in this case margin or padding&#41; is followed by a dash and the side of the box to which the value is to be applied: top, right, bottom, or left. For example, the padding-left property accepts only one value and will set the left padding for that element; the margin-top property accepts only one value and will set the top margin for that element.</p>
+                <code>
+                    div {
+                        margin-top: 10px;
+                        padding-left: 6px;
+                      }
+                </code>
+                <p>When we wish to identify only one margin or padding value, it is best to use the longhand properties. Doing so keeps our code explicit and helps us to avoid any confusion down the road. For example, did we really want to set the top, right, and left sides of the element to have margins of 0 pixels, or did we really only want to set the bottom margin to 10 pixels? Using longhand properties and values here helps to make our intentions clear. When dealing with three or more values, though, shorthand is incredibly helpful.</p>
+            </article>
+     </section>
+
+     <!--Box Sizing-->
+
+     <section class="main-section" id="Box_Sizing">
+         <header>Box Sizing</header>
+         <article>
+            <p>Until now the box model has been an additive design. If you set the width of an element to 400 pixels and then add 20 pixels of padding and a border of 10 pixels on every side, the actual full width of the element becomes 460 pixels. Remember, we need to add the width, padding, and border property values together to get the actual, full width of an element.</p>
+            <p>The box model may, however, be changed to support different calculations. CSS3 introduced the box-sizing property, which allows us to change exactly how the box model works and how an element’s size is calculated. The property accepts three primary values—content-box, padding-box, and border-box—each of which has a slightly different impact on how the box size is calculated.</p>
+            <h3>Content Box</h3>
+            <p>The <i>content-box</i> value is the default value, leaving the box model as an additive design. If we don't use the <i>box-sizing</i> property, this will be the default value for all elements. The size of an element begins with the <i>width</i> and <i>height</i> properties, and then any <i>padding, border, or margin</i> property values are added on from there.</p>
+            <code>
+                div {
+                    -webkit-box-sizing: content-box;
+                       -moz-box-sizing: content-box;
+                            box-sizing: content-box;
+                  }                  
+            </code>
+            <h3>Padding Box</h3>
+            <p>The <i>padding-box</i> value alters the box model by including any <i>padding</i> property values within the width and height of an element. When using the <i>padding-box</i> value, if an element has a <i>width</i> of 400 pixels and a <i>padding</i> of 20 pixels around every side, the actual width will remain 400 pixels. As any <i>padding</i> values increase, the content size within an element shrinks proportionately.</p>
+             <p>If we add a border or margin, those values will be added to the width or height properties to calculate the full box size. For example, if we add a border of 10 pixels and a padding of 20 pixels around every side of the element with a width of 400 pixels, the actual full width will become 420 pixels.</p> 
+             <code>
+                div {
+                    box-sizing: padding-box;
+                  }
+             </code>
+             <h4>The padding-box Value Has Been Deprecated</h4>
+             <p>As the CSS specification has evolved, the padding-box value for the box-sizing property has been deprecated and should not be used.</p>
+             <h3>Border Box</h3>
+             <p>Lastly, the border-box value alters the box model so that any border or padding property values are included within the width and height of an element. When using the border-box value, if an element has a width of 400 pixels, a padding of 20 pixels around every side, and a border of 10 pixels around every side, the actual width will remain 400 pixels.</p>
+             <p>If we add a margin, those values will need to be added to calculate the full box size. No matter which box-sizing property value is used, any margin values will need to be added to calculate the full size of the element.</p>
+             <code>
+                div {
+                    box-sizing: border-box;
+                  }  
+             </code>
+             <figure>
+                 <img src="" alt="Box Sizing">
+                 <figcaption>
+                    Fig 3:  Different box-sizing values allow the width of an element—and its box—to be calculated from different areas
+                    </figcaption>
+             </figure>
+             <h3>Picking a Box Size</h3>
+             <p>Generally speaking, the best box-sizing value to use is border-box. The border-box value makes our math much, much easier. If we want an element to be 400 pixels wide, it is, and it will remain 400 pixels wide no matter what padding or border values we add to it.</p>
+             <p>Additionally, we can easily mix length values. Say we want our box to be 40% wide. Adding a padding of 20 pixels and a border of 10 pixels around every side of an element isn’t difficult, and we can still guarantee that the actual width of our box will remain 40% despite using pixel values elsewhere.</p>
+             <p>The only drawback to using the box-sizing property is that as part of the CSS3 specification, it isn’t supported in every browser; it especially lacks support in older browsers. Fortunately this is becoming less and less relevant as new browsers are released. Chances are we’re safe to use the box-sizing property, but should we notice any issues, it’s worth looking into which browser those issues are occurring with.</p>
+        </article>
+     </section>
+
+     <!--Developer Tools-->
+
+     <section class="main-section" id="Developer_Tools">
+         <header>Developer Tools</header>
+         <article>
+             <p>Most browsers have what are known as Developer Tools. These tools allow us to inspect an element on a page, see where that element lives within the HTML document, and see what CSS properties and values are being applied to it. Most of these tools also include a box model diagram to show the computed size of an element.</p>
+             <p>To see the Developer Tools in Google Chrome, click “View” within the menu bar and navigate to “Developer” and then “Developer Tools.” This loads a drawer at the bottom of the browser window that provides a handful of tools for inspecting our code.</p>
+             <p>Clicking the magnifying glass at the bottom of this drawer enables us to hover over and then click on different elements on the page to review more information about them.</p>
+             <p>After selecting an element, we’ll see a handful of tabs on the right-hand side of the Elements panel within our Developer Tools. Selecting the “Computed” tab will show us a breakdown of the box model for our selected element.</p>
+             <p>Play around with the Developer Tools, be it in Google Chrome, Mozilla Firefox, Apple Safari, or other browsers; there is much to learn from looking at our code. I generally leave the Developer Tools open at all times when writing HTML and CSS. And I frequently inspect the code of other websites to see how they are built, too.</p>
+             <figure>
+                 <img src="" alt="Developer Tools">
+                 <figcaption>
+                     Fig 4: The Google Chrome Developer Tools, which help us to inspect the HTML and CSS on any page
+                 </figcaption>
+             </figure>
+             <p>The box model is one of the most confusing parts of learning how to write HTML and CSS. It is also one of the most powerful parts of HTML and CSS, and once we have it mastered, most everything else—like positioning content—will come to us fairly easily.</p>
+         </article>
+     </section>
+
+     <!--Summary-->
+
+    <section class="main-section" id="Summary">
+        <header>Summary</header>
+        <article>
+            <p>Learning all the different parts of the box model is no small feat. These concepts, although briefly introduced, take quite a bit of time to fully master, and we’re on the right path toward doing so.</p>
+            <p>In brief, within this lesson we talked about the following:</p>
+            <ul>
+                <li>How different elements are displayed</li>
+                <li>What the box model is and why it’s importan</li>
+                <li>How to change the size, including the height and width, of elements</li>
+                <li>How to add margin, padding, and borders to elements</li>
+                <li>How to change the box sizing of elements and the effects this has on the box model</li>
+            </ul>
+        </article>
+    </section>
+
+    <!--Reference-->
+
+    <section class="main-section" id="References">
+        <header>Refrences</header>
+        <article>
+           <ul>
+               <li><a href="https://learn.shayhowe.com/html-css/opening-the-box-model/" target="_blank">learn.shayhowe.com</a></li>
+               <li><a href="https://css-tricks.com/the-css-box-model/" target="_blank">The CSS BOX Model</a> via CSS-Tricks</li>
+               <li><a href="https://www.quackit.com/html/codes/html_borders.cfm" target="_blank">HTML Borders</a>via Quackit.com</li>
+
+           </ul> 
+        </article>
+
+    </section>
+    </main>
+</body>
+</html>
