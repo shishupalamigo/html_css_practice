@@ -48,3 +48,136 @@ table {
 	border-spacing: 0;
 }
 /*Eric Mayer's reset Ends here */
+
+.primary-nav {
+    float: right;
+    margin-top: 1em;
+    margin-right: 1.5em;
+} 
+.primary-nav a {
+    text-decoration: none;
+    color: rgb(77, 77, 77);
+    margin: 1em .5em;
+    cursor: pointer;
+} 
+.primary-nav button {
+    background: #497ac4;
+    padding: .5em .75em;
+    border-radius: 2px;
+    color: #fff;
+    border: none;
+    width: 5em;
+    height: 2.25em;
+}
+.primary-nav a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+.logo {
+    width: 100%;
+    
+}
+.logo img {
+    width: 22%;
+    position: relative;
+    vertical-align: middle;
+    margin-left: 37%;
+    margin-top: 10%;
+    margin-bottom: 2%;
+}
+#searchform {
+    margin: auto;
+    width: 40%;
+    border: 1px solid #e1e2e4;
+    padding: 10px;
+    border-radius: 2em;
+    height: 1.55em;
+}
+input {
+    width: 92%;
+    border: none;
+}
+i {
+    margin-top: .30em;
+}
+#buttons {
+    margin: auto;
+    width: 20%;
+    padding: 2em;  
+}
+#buttons button {
+       padding: .5em;
+       margin: .5em;
+       border-radius: 5px;
+       border: none;
+       color: rgb(121, 120, 118);
+}
+#buttons button:hover {
+    border: 1px solid #cacccf;
+    cursor: pointer;
+}
+.center {
+    text-align: center;
+    margin-top: -2.5%;  
+}
+.center p {
+    line-height: 3.5em;
+    font-size: .80em;
+}
+.center a {
+    text-decoration: none;
+    margin: .25em;
+}
+.center a:hover {
+    text-decoration: underline;
+}
+.country {
+    width: 100%;
+    background: #f6f6f7;
+    height: 2.5em;
+    border: .5px solid #e7e7e7;
+}
+.country h3 {
+    margin: 0em;
+    padding-left: 2em;
+    padding-top: 1em;
+    font-size: 1em;
+    color: rgb(121, 120, 118);
+}
+#left-nav {
+    background: #f6f6f7;
+    height: 2.5em;
+    width: 50%;
+    float: left;
+}
+#right-nav {
+   width: 50%;
+   background: #f6f6f7;
+   display: inline-block;
+   height: 2.5em; 
+}
+#right-nav a {
+    float: right;
+    padding: 1em;
+    color: rgb(121, 120, 118);
+    text-decoration: none;
+}
+#left-nav a {
+    padding: 1em;
+    position: relative;
+    top: 1em;
+    color: rgb(121, 120, 118);
+    text-decoration: none;
+}
+#left-nav a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+#right-nav a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+} 
+footer {
+    position: relative;
+    top: 5em;
+}
