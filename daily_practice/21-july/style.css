@@ -100,7 +100,7 @@ table {
       font-size: 2rem;
       font-weight: 900;
       color: var(--color-primary);
-      line-height: 1.2;
+      line-height: 1.1;
   }
 
   label {
@@ -162,51 +162,22 @@ table {
    .inline-field-control input {
        flex: auto;
    }
-    .btn {
+   input:hover {
+       transform: translateY(-1px);
+       filter: brightness(0.85);
+   }
+    .button {
         background: var(--color-secondary);
         color: var(--color-primary);
         font-size: 1.6rem;
         min-width: 3.5rem;
         cursor: pointer;
     }
-    .btn:hover {
-        filter: brightness(1.05);
+    .button:hover {
+        filter: brightness(1.15);
     }
-    .btn i {
-        transform: translateY(1px);
-    }
-
-    .alert {
-        --alert-text: var(--color-text);
-        --alert-bg: var(--color-bg);
-        display: flex;
-        align-items: flex-start;
-        background: var(--alert-bg);
-        color: var(--alert-text);
-        border: 1px solid;
-        padding: var(--metric-box-padding);
-        margin-top: 1rem;
-        animation: slide-up 250ms ease;
+    #arrow:hover {
+        transform: translateX(2px);
     }
 
-    .alert[data-state='error'] {
-        --alert-text: var(--color-error);
-        --alert-bg: var(--color-error-bg);
-      }
-      
-      .alert[data-state='success'] {
-        --alert-text: var(--color-success);
-        --alert-bg: var(--color-success-bg);
-      }
-      
-      .alert__icon {
-        font-size: 1.6em;
-        flex-shrink: 0;
-      }
-      .alert__content {
-        padding-left: 0.8rem;
-      }
-      
-      .alert__content b {
-        display: block;
-      }
+ 

@@ -3,15 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Signup form</title>
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/Inter-Black.woff2" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/modern-css-reset/dist/reset.min.css" />
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <main class="signup flow"> 
+    <main class="[ signup ] [ flow ]"> 
         <h1 class="signup_heading">Sign up for the latest updates</h1>
         
-      <form id="signupForm" action="/" class="signup_form flow" method="POST">
+      <form id="signupForm" action="/" class="[ signup_form ] [ flow ]" method="POST">
         <label for="email">Email address</label>
         <div class="inline-field-control">
              <input 
@@ -23,13 +26,13 @@
              required
              pattern="[^@]+@[^\.]+\..+"
              >
-             <button type="submit" class="btn">
+             <button type="submit" class="button">
               <span class="visually-hidden">Submit Email</span>
-               <i class="fa fa-arrow-right" aria-hidden="true" style="width: 1em; height: 1em;"></i>
+               <i class="fa fa-arrow-right" id="arrow" aria-hidden="true" style="width: 1em; height: 1em;"></i>
              </button>
         </div>
-        <div aria-atomic="true" role="alert" class="signup__alert"></div>
       </form>
-   </main>    
+   </main>
+   <script  type="module" src="script.js" async defer></script>    
 </body>
 </html>
