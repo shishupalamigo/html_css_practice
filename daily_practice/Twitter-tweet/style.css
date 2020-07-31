@@ -23,52 +23,106 @@ body {
     align-items: center;
     margin: 0 0 0 auto;
   }
-  header .follow-btn button {
-    border: 0;
-    border-radius: 3px;
-    padding: 5px;
+   header .follow-btn button {
+    border: 1px solid;
+    border-radius: 20px;
+    padding: .7em;
+    color: #00acee;
+    font-weight: 900;
   }
+button:hover {
+   background-color: #cae8f5;
+   cursor: pointer;
+   transform: scale(1.2);
+   transition: ease-out .5s;
+}
+button a {
+  text-decoration: none;
+  color: #00acee;
+}
+
   header h3, header h4 {
     display: flex;
     margin: 0;
+    line-height: 1;
+  }
+  h4 {
+    color: grey;
+    font-weight: lighter;
   }
   #inner p {
     margin-bottom: 10px;
     font-size: 20px;
-  }
-  #inner hr {
-    margin: 20px 0;
-    border-style: solid;
-    opacity: 0.1;
+    font-weight: lighter;
   }
  .stats {
      display: flex;
-     flex-direction: column;
-     justify-items: space-around;    
+     flex-direction: row;
+     width: 100%;
+     color: #a1a5a5;
+     margin: 20px 0;  
  }
  .reply, .retweets, .likes, .send {
-     margin-left: 2em;
-     margin-right: 2em;
+     flex: 1;
+     font-size: 1.4em;
  } 
-
-  footer {
-display: flex;
-  }
-  footer .stats {
-    display: flex;
-    flex-direction: row;
-    font-size: 15px;
-  }
-  footer .stats strong {
-    font-size: 18px;
-  }
-  footer .stats .likes {
-    margin-left: 10px;
-  }
-  footer .cta {
-    margin-left: auto;
-  }
-  footer .cta button {
-    border: 0;
-    background: transparent;
-  }
+ .reply:hover {
+  color:  #00acee;
+ }
+ #reply-i:hover,
+ #reply-i:focus {
+  outline: none;
+  border-color: rgba(0, 172, 238, 1);
+  border-radius: 50%;
+  box-shadow: 0px 0px 1em rgb(0, 179, 250);
+  background-color: rgb(192, 231, 243); 
+  cursor: pointer;
+  transform: scale(1.2);
+  transition: ease-out .2s;
+ }
+ .retweets:hover {
+   color: rgb(20, 133, 20);
+ }
+ #retweets-i:hover,
+ #retweets-i:focus {
+  outline: none;
+  border-color: rgb(12, 206, 70, 1);
+  border-radius: 50%;
+  box-shadow: 0px 0px 1em rgb(7, 224, 61);
+  background-color: rgb(227, 235, 231); 
+  cursor: pointer;
+  transform: scale(1.2);
+  transition: ease-out .2s;
+ }
+ .likes:hover {
+     color: rgb(212, 46, 46);
+ }
+ #likes-i:hover,
+ #likes-i:focus {
+  outline: none;
+  border-color: rgb(238, 53, 53);
+  border-radius: 50%;
+  box-shadow: 0px 0px 1em rgb(250, 36, 8);
+  background-color: rgb(240, 225, 225); 
+  cursor: pointer;
+  transform: scale(1.2);
+  transition: ease-out .2s;
+ }
+ #send-i:hover,
+ #send-i:focus {
+   color: #00acee;
+   outline: none;
+  border-color: #00acee;
+  border-radius: 50%;
+  box-shadow: 0px 0px 1em rgb(0, 179, 250);
+  background-color: rgb(241, 241, 241); 
+  cursor: pointer;
+  transform: scale(1.2);
+  transition: ease-out .2s;
+ }
+ @media screen and (min-width: 726px) {
+    main {
+      width: 50%;
+      margin: auto;
+    }
+ }
